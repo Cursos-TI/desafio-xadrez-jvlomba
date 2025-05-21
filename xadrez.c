@@ -1,32 +1,57 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+void recurcividadeT (int movT) {
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+  if (movT < 5){
+    printf("Direita \n");
+    recurcividadeT(movT + 1);
+  }
+}
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+void recursividadeB (){
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+  for (int linha = 1; linha <= 5; linha++){
+    for (int coluna = 1; coluna >= 0; coluna--) {
+        printf(coluna == 1 ? "cima," : " direita\n");
+     }
+  }
+}
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+void recurcividadeR (){
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+for (int r = 0; r < 6; r++){
+  printf("Esquerda \n");
+}
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+}
 
-    return 0;
+int main(){
+
+  printf("   ####BEM VINDO!!! DESAFIO XAREZ#### \n");
+  //movimentação da torre 
+  printf("A Torre ira se movimentar \n");
+  int movt = 0;
+  recurcividadeT(movt);  //chamando void
+  printf(" *************************** \n"); 
+  //movimentação do bispo
+  printf("O bispo ira se movimentar \n");
+  recursividadeB();  //chamando void
+  printf(" *************************** \n"); 
+  //movimentação da rainha
+  printf("A Rainha ira se movimentar \n");
+  recurcividadeR();  //chamando void
+  printf(" *************************** \n"); 
+
+  //movimentação do cavalo
+  printf("O Cavalo ira se movimentar\n"); 
+ for (int cavalo = 1; cavalo <= 2; cavalo++)
+ {  printf("cima\n");
+  for (int cavalomov = 2; cavalomov == cavalo; cavalo++) {
+    printf("direita\n");
+  }
+  
+}
+
+
 }
